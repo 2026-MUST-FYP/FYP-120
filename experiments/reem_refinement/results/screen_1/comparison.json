@@ -1,0 +1,209 @@
+{
+  "status": "complete",
+  "stage": "screen",
+  "candidates": [
+    "balanced_reem",
+    "ridge_reem"
+  ],
+  "seeds": [
+    20261127,
+    20261128
+  ],
+  "settings": {
+    "epochs": 8,
+    "imgsz": 512,
+    "batch": 16,
+    "workers": 0,
+    "device": 0,
+    "deterministic": true,
+    "optimizer": "AdamW",
+    "lr0": 0.0003,
+    "lrf": 0.1,
+    "patience": 0,
+    "warmup_epochs": 1,
+    "warmup_bias_lr": 0.0,
+    "weight_decay": 0.0005,
+    "hsv_h": 0,
+    "hsv_s": 0,
+    "hsv_v": 0.25,
+    "degrees": 0,
+    "translate": 0.1,
+    "scale": 0.25,
+    "fliplr": 0.5,
+    "flipud": 0,
+    "mosaic": 0.5,
+    "close_mosaic": 0,
+    "mixup": 0.0,
+    "cache": false,
+    "amp": false,
+    "plots": false,
+    "exist_ok": false,
+    "verbose": false,
+    "iou": 0.5,
+    "max_det": 300
+  },
+  "initial_weights_sha256": "041bc955c3f6cfb7a597d456b07e235cbc0807e4e33448beb5a7a5918fb37576",
+  "data_fingerprint": "367036c5cefb0bfeb1e6a98f9fdf46505622435b31ba16a87c301cb4b0f03b09",
+  "implementation_sha256": "6204085127081a91aaa3a09f6972a7ab659c9fae72f8e8e106a7ecedcc05eecf",
+  "seam_sha256": "4cfc33445afd5b574503ec2c472d0e34aaf066b001bd940fb3ea0f4598be3d97",
+  "runner_sha256": "6ddc6100848f6a41344fdb84c01a77a0d8e4613d0e62cdc293d9fe1ee252a113",
+  "screening_rule": "Match the original's negative-image FP budget on validation. Require neither seed to lose small-box hits, at least two extra hits across both seeds, no added seam-image alarms in total, and no mean mAP50-95 loss.",
+  "experiments": {
+    "20261127": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 11,
+          "all_tp": 18,
+          "negative_fp": 20,
+          "seam_fp": 2
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 11,
+          "all_tp": 18,
+          "negative_fp": 20,
+          "seam_fp": 2
+        },
+        "map50": 0.0395,
+        "map50_95": 0.01263,
+        "checkpoint": "runs/reem_pilot/20261126_121448/original_reem/weights/last.pt",
+        "weights_sha256": "1a175a742c35fcd731333230f88de6cb482d544c459560acb79c8f4b9438a3be"
+      },
+      "balanced_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 14,
+          "all_tp": 20,
+          "negative_fp": 18,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.24095080792903903,
+          "small_tp": 16,
+          "all_tp": 22,
+          "negative_fp": 20,
+          "seam_fp": 3
+        },
+        "map50": 0.03397,
+        "map50_95": 0.01239,
+        "checkpoint": "runs/reem_refinement/screen_20261126_130311/20261127/balanced_reem/weights/last.pt",
+        "weights_sha256": "c860cf40107076d96f06f8cfffcf14e50036f8e5ead3934a4f56bb1eff8803a0"
+      },
+      "ridge_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 13,
+          "all_tp": 18,
+          "negative_fp": 15,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.20831896364688876,
+          "small_tp": 13,
+          "all_tp": 19,
+          "negative_fp": 20,
+          "seam_fp": 1
+        },
+        "map50": 0.03789,
+        "map50_95": 0.01382,
+        "checkpoint": "runs/reem_refinement/screen_20261126_130311/20261127/ridge_reem/weights/last.pt",
+        "weights_sha256": "d0fdb48393c1abe4499f1acc110c47e79cbabd0cdfe554c8013fae9d8ebf0c07"
+      }
+    },
+    "20261128": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 9,
+          "all_tp": 18,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 9,
+          "all_tp": 18,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "map50": 0.04558,
+        "map50_95": 0.01419,
+        "checkpoint": "runs/reem_pilot/20261126_122248/original_reem/weights/last.pt",
+        "weights_sha256": "422849c6d999ab81ff5785a7ad84d30b216b942e83cbdf3e5f205d425491e811"
+      },
+      "balanced_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 8,
+          "all_tp": 16,
+          "negative_fp": 13,
+          "seam_fp": 2
+        },
+        "matched": {
+          "conf": 0.22811713814735415,
+          "small_tp": 9,
+          "all_tp": 18,
+          "negative_fp": 14,
+          "seam_fp": 2
+        },
+        "map50": 0.04926,
+        "map50_95": 0.01711,
+        "checkpoint": "runs/reem_refinement/screen_20261126_130311/20261128/balanced_reem/weights/last.pt",
+        "weights_sha256": "95c5a2280b539fbe4d0fc8751c21cfe05438b10419ddee5fc4ba116b9044a3d1"
+      },
+      "ridge_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 6,
+          "all_tp": 12,
+          "negative_fp": 13,
+          "seam_fp": 2
+        },
+        "matched": {
+          "conf": 0.2045669108629227,
+          "small_tp": 8,
+          "all_tp": 15,
+          "negative_fp": 14,
+          "seam_fp": 2
+        },
+        "map50": 0.04515,
+        "map50_95": 0.01493,
+        "checkpoint": "runs/reem_refinement/screen_20261126_130311/20261128/ridge_reem/weights/last.pt",
+        "weights_sha256": "5e85f7bb60d44cb39b6581435a23eedce4e441200b557f429a4a4aa639cdc6e1"
+      }
+    }
+  },
+  "ranking": {
+    "balanced_reem": {
+      "small_deltas": [
+        5,
+        0
+      ],
+      "seam_fp_deltas": [
+        1,
+        1
+      ],
+      "map50_95_deltas": [
+        -0.00024000000000000063,
+        0.0029200000000000007
+      ],
+      "eligible": false
+    },
+    "ridge_reem": {
+      "small_deltas": [
+        2,
+        -1
+      ],
+      "seam_fp_deltas": [
+        -1,
+        1
+      ],
+      "map50_95_deltas": [
+        0.00119,
+        0.0007400000000000011
+      ],
+      "eligible": false
+    }
+  }
+}
