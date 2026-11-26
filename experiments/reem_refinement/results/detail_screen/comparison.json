@@ -1,0 +1,153 @@
+{
+  "status": "complete",
+  "stage": "screen",
+  "candidates": [
+    "detail_fusion_reem"
+  ],
+  "seeds": [
+    20261127,
+    20261128
+  ],
+  "settings": {
+    "epochs": 8,
+    "imgsz": 512,
+    "batch": 16,
+    "workers": 0,
+    "device": 0,
+    "deterministic": true,
+    "optimizer": "AdamW",
+    "lr0": 0.0003,
+    "lrf": 0.1,
+    "patience": 0,
+    "warmup_epochs": 1,
+    "warmup_bias_lr": 0.0,
+    "weight_decay": 0.0005,
+    "hsv_h": 0,
+    "hsv_s": 0,
+    "hsv_v": 0.25,
+    "degrees": 0,
+    "translate": 0.1,
+    "scale": 0.25,
+    "fliplr": 0.5,
+    "flipud": 0,
+    "mosaic": 0.5,
+    "close_mosaic": 0,
+    "mixup": 0.0,
+    "cache": false,
+    "amp": false,
+    "plots": false,
+    "exist_ok": false,
+    "verbose": false,
+    "iou": 0.5,
+    "max_det": 300
+  },
+  "initial_weights_sha256": "041bc955c3f6cfb7a597d456b07e235cbc0807e4e33448beb5a7a5918fb37576",
+  "data_fingerprint": "367036c5cefb0bfeb1e6a98f9fdf46505622435b31ba16a87c301cb4b0f03b09",
+  "implementation_sha256": "989981824d30edfa588a4c41ab7f003df9147570569de72b599b728d869d07cf",
+  "seam_sha256": "4cfc33445afd5b574503ec2c472d0e34aaf066b001bd940fb3ea0f4598be3d97",
+  "detail_fusion_sha256": "ef71ceb93e045145c3d32c56574b586e6b05ca88bbd4e41db0842023b2938d1c",
+  "runner_sha256": "34d5aa189df7bdf0427d361176bef6f2b694b72d3bd012ce5ea0635830608ce3",
+  "experiments": {
+    "20261127": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 11,
+          "all_tp": 18,
+          "negative_fp": 20,
+          "seam_fp": 2
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 11,
+          "all_tp": 18,
+          "negative_fp": 20,
+          "seam_fp": 2
+        },
+        "map50": 0.0395,
+        "map50_95": 0.01263,
+        "checkpoint": "runs/reem_pilot/20261126_121448/original_reem/weights/last.pt",
+        "weights_sha256": "1a175a742c35fcd731333230f88de6cb482d544c459560acb79c8f4b9438a3be"
+      },
+      "detail_fusion_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 11,
+          "all_tp": 18,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.17391605675220492,
+          "small_tp": 12,
+          "all_tp": 21,
+          "negative_fp": 20,
+          "seam_fp": 2
+        },
+        "map50": 0.03727,
+        "map50_95": 0.01458,
+        "checkpoint": "runs/reem_refinement/detail_screen_20261126_134921/20261127/detail_fusion_reem/weights/last.pt",
+        "weights_sha256": "8b00b9970f08b59208e493406e922829566120390d0b98c99f8d25e92e828661"
+      }
+    },
+    "20261128": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 9,
+          "all_tp": 18,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 9,
+          "all_tp": 18,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "map50": 0.04558,
+        "map50_95": 0.01419,
+        "checkpoint": "runs/reem_pilot/20261126_122248/original_reem/weights/last.pt",
+        "weights_sha256": "422849c6d999ab81ff5785a7ad84d30b216b942e83cbdf3e5f205d425491e811"
+      },
+      "detail_fusion_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 7,
+          "all_tp": 16,
+          "negative_fp": 11,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.16804142296314242,
+          "small_tp": 8,
+          "all_tp": 18,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "map50": 0.047,
+        "map50_95": 0.01605,
+        "checkpoint": "runs/reem_refinement/detail_screen_20261126_134921/20261128/detail_fusion_reem/weights/last.pt",
+        "weights_sha256": "077b8750854965268425185d3aa610a117e9c4a41417bd19348e54a761459750"
+      }
+    }
+  },
+  "ranking": {
+    "detail_fusion_reem": {
+      "small_deltas": [
+        1,
+        -1
+      ],
+      "seam_fp_deltas": [
+        0,
+        0
+      ],
+      "map50_95_deltas": [
+        0.0019499999999999986,
+        0.0018599999999999988
+      ],
+      "eligible": false
+    }
+  }
+}

@@ -11,6 +11,8 @@
 | 局部线状残差 | 在双侧对比基础上减去沿线方向的较长范围平均响应，再将局部差异加入模块输出。 |
 | 长线条件门控 | 用局部线状差异调节现有横向和纵向条带的权重。 |
 | 逐通道长线门控 | 保留长线条件，改为每个特征通道使用自身的条带响应和局部差异来决定权重。 |
+| P2 细节融合 | 从分辨率更高的 P2 特征提取相邻位置的横向、纵向和对角差异，投影后加入 P3 的 REEM 输出。 |
+| P2 细节与长线门控融合 | 将 P2 细节补充到 P3 输入，让补充后的特征参与后续长线判断和横纵权重计算。 |
 
 新增权重系数均从 1 开始，新增残差从 0 开始。启动训练前验证整模型输出与原版一致，并检查新增分支有有效梯度。模型只在 P3 检测路径接入这些模块。
 
@@ -34,8 +36,29 @@ TACK 小框沿用标注框短边小于 21.33 像素的口径，IoU 0.50 一对�
 
 五个方案都未达到筛选线。长线条件门控的 mAP50–95 两次均有提升，两组接缝图误报合计持平。在该筛选结果基础上，将其用于 12 轮、两套新种子的探索性复核。
 
+## 长线门控与 P2 细节复核
+
+| 试验 | 小框检出变化 | 接缝图误报变化 | mAP50–95 变化 |
+| --- | ---: | ---: | ---: |
+| [长线条件门控，12 轮复核](results/line_confirmation/comparison.json) | −3、−3 | +1、+1 | +0.45、−0.15 个百分点 |
+| [P2 细节融合，8 轮筛选](results/detail_screen/comparison.json) | +1、−1 | 0、0 | +0.20、+0.19 个百分点 |
+| [P2 细节融合，12 轮复核](results/detail_confirmation/comparison.json) | +1、−3 | 0、+1 | −0.10、+0.06 个百分点 |
+
+这几组仍未达到原判定条件。P2 版 12 轮复核复用同种子、同设置的已验收原版 REEM。
+
+## 混合训练集对照
+
+训练集使用 140 张不同的 TACK 图片和 580 张 LinkCrack 图片，验证集沿用同一份 TACK 划分。两组 8 轮，随机种子为 20261206、20261207。
+
+| 候选 | 小框检出变化 | 接缝图误报变化 | mAP50–95 变化 |
+| --- | ---: | ---: | ---: |
+| [P2 细节融合](results/detail_mixed/comparison.json) | +1、−3 | 0、0 | +0.25、+0.30 个百分点 |
+| [P2 细节与长线门控融合](results/detail_line_mixed/comparison.json) | 0、−2 | +1、−1 | +0.94、−0.07 个百分点 |
+
+混合训练下，两种 P2 版本还没有稳定提高小框检出。两种方案在各自试验中共用同种子、同设置的原版对照。16 轮复核另用 20261213、20261214 两个新种子，重新训练原版和融合版。
+
 ## 记录入口
 
 - [第一次筛选](results/screen_1/comparison.json)、[第二次筛选](results/screen_2/comparison.json)、[第三次筛选](results/screen_3/comparison.json)。各目录含逐轮指标。前两次保存了当时实际运行的源文件。
-- [模型实现](../../src/reem_line_control.py)、[训练入口](run_reem_refinement.py)、[TACK 测试入口](verify_reem_refinement.py) 和 [CTCD 外部验证入口](evaluate_reem_ctcd.py)。复跑需要原工作区提供固定划分、历史辅助脚本和模型初始权重。
+- [长线门控实现](../../src/reem_line_control.py)、[P2 细节融合实现](../../src/reem_detail_fusion.py)、[训练入口](run_reem_refinement.py)、[P2 训练入口](run_reem_detail_study.py)、[TACK 测试入口](verify_reem_refinement.py) 和 [CTCD 外部验证入口](evaluate_reem_ctcd.py)。复跑需要原工作区提供固定划分、历史辅助脚本和模型初始权重。
 - CTCD 已按作者发布版本核验 292 个图像和掩膜配对。它作为外部评价候选，图片均有裂缝标注。[作者发布页](https://huggingface.co/datasets/shiweiluo99/tunnel-crack-segmentation-dataset)

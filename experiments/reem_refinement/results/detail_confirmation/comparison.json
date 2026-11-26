@@ -1,0 +1,153 @@
+{
+  "status": "complete",
+  "stage": "confirm",
+  "candidates": [
+    "detail_fusion_reem"
+  ],
+  "seeds": [
+    20261202,
+    20261203
+  ],
+  "settings": {
+    "epochs": 12,
+    "imgsz": 512,
+    "batch": 16,
+    "workers": 0,
+    "device": 0,
+    "deterministic": true,
+    "optimizer": "AdamW",
+    "lr0": 0.0003,
+    "lrf": 0.1,
+    "patience": 0,
+    "warmup_epochs": 1,
+    "warmup_bias_lr": 0.0,
+    "weight_decay": 0.0005,
+    "hsv_h": 0,
+    "hsv_s": 0,
+    "hsv_v": 0.25,
+    "degrees": 0,
+    "translate": 0.1,
+    "scale": 0.25,
+    "fliplr": 0.5,
+    "flipud": 0,
+    "mosaic": 0.5,
+    "close_mosaic": 0,
+    "mixup": 0.0,
+    "cache": false,
+    "amp": false,
+    "plots": false,
+    "exist_ok": false,
+    "verbose": false,
+    "iou": 0.5,
+    "max_det": 300
+  },
+  "initial_weights_sha256": "041bc955c3f6cfb7a597d456b07e235cbc0807e4e33448beb5a7a5918fb37576",
+  "data_fingerprint": "367036c5cefb0bfeb1e6a98f9fdf46505622435b31ba16a87c301cb4b0f03b09",
+  "implementation_sha256": "989981824d30edfa588a4c41ab7f003df9147570569de72b599b728d869d07cf",
+  "seam_sha256": "4cfc33445afd5b574503ec2c472d0e34aaf066b001bd940fb3ea0f4598be3d97",
+  "detail_fusion_sha256": "ef71ceb93e045145c3d32c56574b586e6b05ca88bbd4e41db0842023b2938d1c",
+  "runner_sha256": "34d5aa189df7bdf0427d361176bef6f2b694b72d3bd012ce5ea0635830608ce3",
+  "experiments": {
+    "20261202": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 16,
+          "all_tp": 23,
+          "negative_fp": 12,
+          "seam_fp": 0
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 16,
+          "all_tp": 23,
+          "negative_fp": 12,
+          "seam_fp": 0
+        },
+        "map50": 0.05003,
+        "map50_95": 0.01583,
+        "checkpoint": "runs/reem_refinement/confirm_20261126_133357/20261202/original_reem/weights/last.pt",
+        "weights_sha256": "b4dd5856421dcab7af6004342a5ae120cf9d65b317880bb9c3f21da54bc7c03f"
+      },
+      "detail_fusion_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 19,
+          "all_tp": 25,
+          "negative_fp": 15,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.2670540809631348,
+          "small_tp": 17,
+          "all_tp": 23,
+          "negative_fp": 12,
+          "seam_fp": 0
+        },
+        "map50": 0.04528,
+        "map50_95": 0.01487,
+        "checkpoint": "runs/reem_refinement/detail_confirm_20261126_135512/20261202/detail_fusion_reem/weights/last.pt",
+        "weights_sha256": "69bfcc724d05d164de895e7a0329e015be99b6af5b2c91392a6c8f25b9ee8bad"
+      }
+    },
+    "20261203": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 14,
+          "all_tp": 25,
+          "negative_fp": 14,
+          "seam_fp": 0
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 14,
+          "all_tp": 25,
+          "negative_fp": 14,
+          "seam_fp": 0
+        },
+        "map50": 0.05651,
+        "map50_95": 0.02274,
+        "checkpoint": "runs/reem_refinement/confirm_20261126_133357/20261203/original_reem/weights/last.pt",
+        "weights_sha256": "bbc911568b731654a40ac59a5dcf856dc935a31fbd0480cffc09f5fbc4bc44fd"
+      },
+      "detail_fusion_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 11,
+          "all_tp": 18,
+          "negative_fp": 16,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.2696926593780518,
+          "small_tp": 11,
+          "all_tp": 18,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "map50": 0.05491,
+        "map50_95": 0.02338,
+        "checkpoint": "runs/reem_refinement/detail_confirm_20261126_135512/20261203/detail_fusion_reem/weights/last.pt",
+        "weights_sha256": "11530ba512df64744a70305abeb8c503e68f046a5b6bf0a68ec4a48084af6027"
+      }
+    }
+  },
+  "ranking": {
+    "detail_fusion_reem": {
+      "small_deltas": [
+        1,
+        -3
+      ],
+      "seam_fp_deltas": [
+        0,
+        1
+      ],
+      "map50_95_deltas": [
+        -0.0009600000000000008,
+        0.0006400000000000017
+      ],
+      "eligible": false
+    }
+  }
+}

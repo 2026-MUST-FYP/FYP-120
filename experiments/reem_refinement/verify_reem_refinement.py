@@ -9,6 +9,7 @@ sys.path.insert(0, str(ROOT))
 from scripts.run_reem_refinement import ORIGINAL, OUTPUT, REPO, file_sha256, measure, predict, read, torch, verify_frozen
 from scripts.experiment_identity import atomic_json
 from scripts.diagnose_v3_sizes import stratum
+from scripts.prepare_v3 import verify_v3
 
 MAX_NEGATIVE_FPR_INCREASE = .01
 
@@ -22,7 +23,7 @@ def main():
         parser.error("Expected a confirmation comparison.json inside runs/reem_refinement")
     record = read(path)
     candidate, = record["candidates"]
-    if record["stage"] != "confirm" or record["status"] != "complete" or not record["ranking"][candidate]["eligible"]:
+    if record["stage"] not in ("confirm", "mixed") or record["status"] != "complete" or not record["ranking"][candidate]["eligible"]:
         raise ValueError("Test evaluation requires a completed, eligible validation confirmation")
     output = path.with_name("test_verification.json")
     if output.exists():
@@ -33,9 +34,16 @@ def main():
         raise ValueError("The line-control code differs from the confirmed run")
     if record.get("channel_control_sha256") and file_sha256(REPO / "src/reem_channel_control.py") != record["channel_control_sha256"]:
         raise ValueError("The channel-control code differs from the confirmed run")
+    if record.get("detail_fusion_sha256") and file_sha256(REPO / "src/reem_detail_fusion.py") != record["detail_fusion_sha256"]:
+        raise ValueError("The detail-fusion code differs from the confirmed run")
 
     torch.set_num_threads(2)
-    data = verify_frozen()
+    if record["stage"] == "mixed":
+        data, mixed = verify_v3()
+        if mixed["fingerprint"] != record["mixed_data_fingerprint"]:
+            raise ValueError("The frozen mixed training set differs from the confirmed run")
+    else:
+        data = verify_frozen()
     if data["fingerprint"] != record["data_fingerprint"]:
         raise ValueError("The evaluation data differs from the confirmed run")
     splits = {}

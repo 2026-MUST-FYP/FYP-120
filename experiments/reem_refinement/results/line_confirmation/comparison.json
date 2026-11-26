@@ -1,0 +1,155 @@
+{
+  "status": "complete",
+  "stage": "confirm",
+  "candidates": [
+    "line_conditioned_reem"
+  ],
+  "seeds": [
+    20261202,
+    20261203
+  ],
+  "settings": {
+    "epochs": 12,
+    "imgsz": 512,
+    "batch": 16,
+    "workers": 0,
+    "device": 0,
+    "deterministic": true,
+    "optimizer": "AdamW",
+    "lr0": 0.0003,
+    "lrf": 0.1,
+    "patience": 0,
+    "warmup_epochs": 1,
+    "warmup_bias_lr": 0.0,
+    "weight_decay": 0.0005,
+    "hsv_h": 0,
+    "hsv_s": 0,
+    "hsv_v": 0.25,
+    "degrees": 0,
+    "translate": 0.1,
+    "scale": 0.25,
+    "fliplr": 0.5,
+    "flipud": 0,
+    "mosaic": 0.5,
+    "close_mosaic": 0,
+    "mixup": 0.0,
+    "cache": false,
+    "amp": false,
+    "plots": false,
+    "exist_ok": false,
+    "verbose": false,
+    "iou": 0.5,
+    "max_det": 300
+  },
+  "initial_weights_sha256": "041bc955c3f6cfb7a597d456b07e235cbc0807e4e33448beb5a7a5918fb37576",
+  "data_fingerprint": "367036c5cefb0bfeb1e6a98f9fdf46505622435b31ba16a87c301cb4b0f03b09",
+  "implementation_sha256": "989981824d30edfa588a4c41ab7f003df9147570569de72b599b728d869d07cf",
+  "seam_sha256": "4cfc33445afd5b574503ec2c472d0e34aaf066b001bd940fb3ea0f4598be3d97",
+  "line_control_sha256": "6fb57774a75cf2ef0367f0eae909bd0aaf9b304550914265e39b7692c213bb35",
+  "channel_control_sha256": "90acc31d55edd0615c9af43df1d7fc5bf7d1caefe5755bbf21b6d6b6a32a364f",
+  "runner_sha256": "2558879c50eaa8932469fbb23f1a78317e3358698838b59ef66c7a072b9223a3",
+  "screening_rule": "Match the original's negative-image FP budget on validation. Require neither seed to lose small-box hits, at least two extra hits across both seeds, no added seam-image alarms in total, and no mean mAP50-95 loss.",
+  "experiments": {
+    "20261202": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 16,
+          "all_tp": 23,
+          "negative_fp": 12,
+          "seam_fp": 0
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 16,
+          "all_tp": 23,
+          "negative_fp": 12,
+          "seam_fp": 0
+        },
+        "map50": 0.05003,
+        "map50_95": 0.01583,
+        "checkpoint": "runs/reem_refinement/confirm_20261126_133357/20261202/original_reem/weights/last.pt",
+        "weights_sha256": "b4dd5856421dcab7af6004342a5ae120cf9d65b317880bb9c3f21da54bc7c03f"
+      },
+      "line_conditioned_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 13,
+          "all_tp": 19,
+          "negative_fp": 13,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.25758045911788946,
+          "small_tp": 13,
+          "all_tp": 19,
+          "negative_fp": 12,
+          "seam_fp": 1
+        },
+        "map50": 0.05239,
+        "map50_95": 0.02033,
+        "checkpoint": "runs/reem_refinement/confirm_20261126_133357/20261202/line_conditioned_reem/weights/last.pt",
+        "weights_sha256": "957b1f47f6120ec24429e0570cc49145deb917d6224deee74f93a3539ce40244"
+      }
+    },
+    "20261203": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 14,
+          "all_tp": 25,
+          "negative_fp": 14,
+          "seam_fp": 0
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 14,
+          "all_tp": 25,
+          "negative_fp": 14,
+          "seam_fp": 0
+        },
+        "map50": 0.05651,
+        "map50_95": 0.02274,
+        "checkpoint": "runs/reem_refinement/confirm_20261126_133357/20261203/original_reem/weights/last.pt",
+        "weights_sha256": "bbc911568b731654a40ac59a5dcf856dc935a31fbd0480cffc09f5fbc4bc44fd"
+      },
+      "line_conditioned_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 12,
+          "all_tp": 20,
+          "negative_fp": 15,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.2895443141460419,
+          "small_tp": 11,
+          "all_tp": 18,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "map50": 0.05201,
+        "map50_95": 0.02126,
+        "checkpoint": "runs/reem_refinement/confirm_20261126_133357/20261203/line_conditioned_reem/weights/last.pt",
+        "weights_sha256": "42196b20fabd3abd15418798433cdb0840c1498a15d410a6c90c369674bf7a47"
+      }
+    }
+  },
+  "ranking": {
+    "line_conditioned_reem": {
+      "small_deltas": [
+        -3,
+        -3
+      ],
+      "seam_fp_deltas": [
+        1,
+        1
+      ],
+      "map50_95_deltas": [
+        0.0045000000000000005,
+        -0.0014799999999999987
+      ],
+      "eligible": false
+    }
+  }
+}

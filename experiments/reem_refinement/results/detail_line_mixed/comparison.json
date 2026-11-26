@@ -1,0 +1,155 @@
+{
+  "status": "complete",
+  "stage": "mixed",
+  "candidates": [
+    "detail_line_reem"
+  ],
+  "seeds": [
+    20261206,
+    20261207
+  ],
+  "settings": {
+    "epochs": 8,
+    "imgsz": 512,
+    "batch": 16,
+    "workers": 0,
+    "device": 0,
+    "deterministic": true,
+    "optimizer": "AdamW",
+    "lr0": 0.0003,
+    "lrf": 0.1,
+    "patience": 0,
+    "warmup_epochs": 1,
+    "warmup_bias_lr": 0.0,
+    "weight_decay": 0.0005,
+    "hsv_h": 0,
+    "hsv_s": 0,
+    "hsv_v": 0.25,
+    "degrees": 0,
+    "translate": 0.1,
+    "scale": 0.25,
+    "fliplr": 0.5,
+    "flipud": 0,
+    "mosaic": 0.5,
+    "close_mosaic": 0,
+    "mixup": 0.0,
+    "cache": false,
+    "amp": false,
+    "plots": false,
+    "exist_ok": false,
+    "verbose": false,
+    "iou": 0.5,
+    "max_det": 300
+  },
+  "initial_weights_sha256": "041bc955c3f6cfb7a597d456b07e235cbc0807e4e33448beb5a7a5918fb37576",
+  "data_fingerprint": "367036c5cefb0bfeb1e6a98f9fdf46505622435b31ba16a87c301cb4b0f03b09",
+  "implementation_sha256": "989981824d30edfa588a4c41ab7f003df9147570569de72b599b728d869d07cf",
+  "seam_sha256": "4cfc33445afd5b574503ec2c472d0e34aaf066b001bd940fb3ea0f4598be3d97",
+  "detail_fusion_sha256": "41ba9e31462c0aa114260f1c769919f016fc1599f50fbbf3c95fc1e2a61e5ec6",
+  "training_data": "data/iteration_v3/balanced.yaml",
+  "mixed_data_fingerprint": "529d71e9de0f0f8ee7b9710da58c21c46a276f04d0d654a0211f608ac4ab260f",
+  "runner_sha256": "587532d2800f9fbaaf84577a30305b88bddc8db7f58c60e24fe79009aba29df5",
+  "experiments": {
+    "20261206": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 7,
+          "all_tp": 44,
+          "negative_fp": 11,
+          "seam_fp": 0
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 7,
+          "all_tp": 44,
+          "negative_fp": 11,
+          "seam_fp": 0
+        },
+        "map50": 0.17744,
+        "map50_95": 0.07513,
+        "checkpoint": "runs/reem_refinement/detail_mixed_20261126_140430/20261206/original_reem/weights/last.pt",
+        "weights_sha256": "8fede39c59f660b065599bc7bec0cdf3806c4824e562032c1b8623e3fdb3127a"
+      },
+      "detail_line_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 11,
+          "all_tp": 55,
+          "negative_fp": 18,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.3372206091880799,
+          "small_tp": 7,
+          "all_tp": 43,
+          "negative_fp": 11,
+          "seam_fp": 1
+        },
+        "map50": 0.18685,
+        "map50_95": 0.08449,
+        "checkpoint": "runs/reem_refinement/detail_mixed_20261126_141626/20261206/detail_line_reem/weights/last.pt",
+        "weights_sha256": "befb9e77446e1870816837635fa85de54327816c9400a30ecb61af0c08230022"
+      }
+    },
+    "20261207": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 10,
+          "all_tp": 48,
+          "negative_fp": 19,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 10,
+          "all_tp": 48,
+          "negative_fp": 19,
+          "seam_fp": 1
+        },
+        "map50": 0.17168,
+        "map50_95": 0.06615,
+        "checkpoint": "runs/reem_refinement/detail_mixed_20261126_140430/20261207/original_reem/weights/last.pt",
+        "weights_sha256": "1197cf30065682b8cece8c9a4dc5ca7f1bcf6d3b7fe2eb9472182d520a5b53aa"
+      },
+      "detail_line_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 11,
+          "all_tp": 49,
+          "negative_fp": 22,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.3144259154796601,
+          "small_tp": 8,
+          "all_tp": 41,
+          "negative_fp": 19,
+          "seam_fp": 0
+        },
+        "map50": 0.16508,
+        "map50_95": 0.06547,
+        "checkpoint": "runs/reem_refinement/detail_mixed_20261126_141626/20261207/detail_line_reem/weights/last.pt",
+        "weights_sha256": "3f203cdbc25fa1cffef42e0dff5c9c916a9a3744e52780f194304e4ec1ca2ec7"
+      }
+    }
+  },
+  "ranking": {
+    "detail_line_reem": {
+      "small_deltas": [
+        0,
+        -2
+      ],
+      "seam_fp_deltas": [
+        1,
+        -1
+      ],
+      "map50_95_deltas": [
+        0.009359999999999993,
+        -0.00068
+      ],
+      "eligible": false
+    }
+  }
+}
