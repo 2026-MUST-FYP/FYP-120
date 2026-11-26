@@ -1,0 +1,156 @@
+{
+  "status": "complete",
+  "stage": "mixed",
+  "candidates": [
+    "detail_line_reem"
+  ],
+  "seeds": [
+    20261213,
+    20261214
+  ],
+  "settings": {
+    "epochs": 16,
+    "imgsz": 512,
+    "batch": 16,
+    "workers": 0,
+    "device": 0,
+    "deterministic": true,
+    "optimizer": "AdamW",
+    "lr0": 0.0003,
+    "lrf": 0.1,
+    "patience": 0,
+    "warmup_epochs": 1,
+    "warmup_bias_lr": 0.0,
+    "weight_decay": 0.0005,
+    "hsv_h": 0,
+    "hsv_s": 0,
+    "hsv_v": 0.25,
+    "degrees": 0,
+    "translate": 0.1,
+    "scale": 0.25,
+    "fliplr": 0.5,
+    "flipud": 0,
+    "mosaic": 0.5,
+    "close_mosaic": 0,
+    "mixup": 0.0,
+    "cache": false,
+    "amp": false,
+    "plots": false,
+    "exist_ok": false,
+    "verbose": false,
+    "iou": 0.5,
+    "max_det": 300
+  },
+  "initial_weights_sha256": "041bc955c3f6cfb7a597d456b07e235cbc0807e4e33448beb5a7a5918fb37576",
+  "data_fingerprint": "367036c5cefb0bfeb1e6a98f9fdf46505622435b31ba16a87c301cb4b0f03b09",
+  "implementation_sha256": "989981824d30edfa588a4c41ab7f003df9147570569de72b599b728d869d07cf",
+  "seam_sha256": "4cfc33445afd5b574503ec2c472d0e34aaf066b001bd940fb3ea0f4598be3d97",
+  "detail_fusion_sha256": "41ba9e31462c0aa114260f1c769919f016fc1599f50fbbf3c95fc1e2a61e5ec6",
+  "training_data": "data/iteration_v3/balanced.yaml",
+  "mixed_data_fingerprint": "529d71e9de0f0f8ee7b9710da58c21c46a276f04d0d654a0211f608ac4ab260f",
+  "screening_rule": "Use each original REEM negative-image FP budget; both seeds must retain small-box hits, gain at least two in total, add no seam-image alarms overall, and retain mean mAP50-95.",
+  "runner_sha256": "09b638f5a683bb7ee55dd2db4cbf916c9ba0e4a924dee3545e8c3d91a982c218",
+  "experiments": {
+    "20261213": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 8,
+          "all_tp": 48,
+          "negative_fp": 16,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 8,
+          "all_tp": 48,
+          "negative_fp": 16,
+          "seam_fp": 1
+        },
+        "map50": 0.19977,
+        "map50_95": 0.08526,
+        "checkpoint": "runs/reem_refinement/detail_mixed_20261126_142320/20261213/original_reem/weights/last.pt",
+        "weights_sha256": "f7874ba3e5131ab3393e21826ac96110fb07fa2438b85b9048d2633a4171c46a"
+      },
+      "detail_line_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 14,
+          "all_tp": 56,
+          "negative_fp": 19,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.30641880631446844,
+          "small_tp": 9,
+          "all_tp": 49,
+          "negative_fp": 16,
+          "seam_fp": 1
+        },
+        "map50": 0.17822,
+        "map50_95": 0.08569,
+        "checkpoint": "runs/reem_refinement/detail_mixed_20261126_142320/20261213/detail_line_reem/weights/last.pt",
+        "weights_sha256": "f99ff8b06f62fbc00546ed0a2e9d569bce5267ab9943b56c2b916f4ff3b594e1"
+      }
+    },
+    "20261214": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 13,
+          "all_tp": 59,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 13,
+          "all_tp": 59,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "map50": 0.19229,
+        "map50_95": 0.08335,
+        "checkpoint": "runs/reem_refinement/detail_mixed_20261126_142320/20261214/original_reem/weights/last.pt",
+        "weights_sha256": "0826da14d44a5e55d241441a5aebf9d703bcf75359d5fd5a529e42d1985415d1"
+      },
+      "detail_line_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 11,
+          "all_tp": 54,
+          "negative_fp": 13,
+          "seam_fp": 0
+        },
+        "matched": {
+          "conf": 0.24388292431831363,
+          "small_tp": 12,
+          "all_tp": 55,
+          "negative_fp": 14,
+          "seam_fp": 0
+        },
+        "map50": 0.18565,
+        "map50_95": 0.07988,
+        "checkpoint": "runs/reem_refinement/detail_mixed_20261126_142320/20261214/detail_line_reem/weights/last.pt",
+        "weights_sha256": "82792ba3b51f79937e7890dbf0d072e6ad06854d7fbecaa7234e39448abf769b"
+      }
+    }
+  },
+  "ranking": {
+    "detail_line_reem": {
+      "small_deltas": [
+        1,
+        -1
+      ],
+      "seam_fp_deltas": [
+        0,
+        -1
+      ],
+      "map50_95_deltas": [
+        0.0004299999999999998,
+        -0.003469999999999987
+      ],
+      "eligible": false
+    }
+  }
+}
