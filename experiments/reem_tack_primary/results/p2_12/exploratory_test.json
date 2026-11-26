@@ -1,0 +1,153 @@
+{
+  "protocol_sha256": "43fd81daf77f86e2f56e5d59e2e7134fe192dde0dec1ea2b80c8fee98306e962",
+  "validation": {
+    "20261224": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 12,
+          "all_tp": 49,
+          "negative_fp": 21,
+          "seam_fp": 0
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 12,
+          "all_tp": 49,
+          "negative_fp": 21,
+          "seam_fp": 0
+        },
+        "map50": 0.16342,
+        "map50_95": 0.06039,
+        "checkpoint": "runs/reem_refinement/tongji_20261126_170555/original_reem/weights/last.pt",
+        "weights_sha256": "815698496b4dc66a806ea59984830a01d28b86d8f459669bc1b86535f1498d1d"
+      },
+      "detail_fusion_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 13,
+          "all_tp": 62,
+          "negative_fp": 15,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.19297660887241366,
+          "small_tp": 18,
+          "all_tp": 70,
+          "negative_fp": 21,
+          "seam_fp": 1
+        },
+        "map50": 0.20207,
+        "map50_95": 0.08474,
+        "checkpoint": "runs/reem_refinement/tongji_20261126_170555/detail_fusion_reem/weights/last.pt",
+        "weights_sha256": "91306daaf8864c13e9a1e6917d69b326800c219c37082635541d2797fe600017"
+      }
+    },
+    "20261225": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 13,
+          "all_tp": 57,
+          "negative_fp": 18,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 13,
+          "all_tp": 57,
+          "negative_fp": 18,
+          "seam_fp": 1
+        },
+        "map50": 0.20654,
+        "map50_95": 0.0887,
+        "checkpoint": "runs/reem_refinement/tongji_20261126_171404/original_reem/weights/last.pt",
+        "weights_sha256": "b93c4babcea6cd9391ecbee2897e1f968c38b10ab13a44e9d4a270f19f6d8c05"
+      },
+      "detail_fusion_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 12,
+          "all_tp": 59,
+          "negative_fp": 21,
+          "seam_fp": 0
+        },
+        "matched": {
+          "conf": 0.2959034442901612,
+          "small_tp": 10,
+          "all_tp": 55,
+          "negative_fp": 18,
+          "seam_fp": 0
+        },
+        "map50": 0.19679,
+        "map50_95": 0.08608,
+        "checkpoint": "runs/reem_refinement/tongji_20261126_171404/detail_fusion_reem/weights/last.pt",
+        "weights_sha256": "a3397512e1d30ab74c113afeebf6a51a00691792b15867fc193c8fa288d918ba"
+      }
+    }
+  },
+  "validation_ap_deltas": {
+    "20261224": 0.024349999999999997,
+    "20261225": -0.0026199999999999973
+  },
+  "eligible": false,
+  "exploratory": true,
+  "amendment_sha256": "a9eb0fa9b92fc81a368ea6d541ca3eaad87890f6c33003fc1b3c261d3f7cbf12",
+  "test_images": 1898,
+  "test_seam_images": 16,
+  "test": {
+    "20261224": {
+      "original_reem": {
+        "map50": 0.09262581614648671,
+        "map50_95": 0.03208261214385112,
+        "secondary": {
+          "conf": 0.25,
+          "small_tp": 35,
+          "all_tp": 121,
+          "negative_fp": 89,
+          "seam_fp": 2
+        }
+      },
+      "detail_fusion_reem": {
+        "map50": 0.10136582994425405,
+        "map50_95": 0.040156107684400186,
+        "secondary": {
+          "conf": 0.19297660887241366,
+          "small_tp": 41,
+          "all_tp": 150,
+          "negative_fp": 88,
+          "seam_fp": 1
+        }
+      }
+    },
+    "20261225": {
+      "original_reem": {
+        "map50": 0.1048100254253383,
+        "map50_95": 0.04211347722268764,
+        "secondary": {
+          "conf": 0.25,
+          "small_tp": 42,
+          "all_tp": 146,
+          "negative_fp": 81,
+          "seam_fp": 1
+        }
+      },
+      "detail_fusion_reem": {
+        "map50": 0.10055152241672498,
+        "map50_95": 0.04180309937579933,
+        "secondary": {
+          "conf": 0.2959034442901612,
+          "small_tp": 20,
+          "all_tp": 119,
+          "negative_fp": 72,
+          "seam_fp": 1
+        }
+      }
+    }
+  },
+  "test_ap_deltas": {
+    "20261224": 0.008073495540549064,
+    "20261225": -0.00031037784688831005
+  },
+  "test_complete": true
+}

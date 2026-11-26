@@ -1,0 +1,6 @@
+{
+  "original_validation_receipt_sha256": "d31f020716e7bfd6e5bd153458c0915b8e37335930c01533f7553246b82a70bb",
+  "test_set": "TACK target_test, 1898 images",
+  "rationale": "The original both-seeds-positive validation gate failed. The primary paired mean validation effect is positive. Conduct one exploratory held-out evaluation for both original and P2 models on both fixed seeds.",
+  "result_reporting": "Report each seed and their unweighted mean. Thresholds for secondary counts stay fixed from validation. No candidate selection uses the test results."
+}

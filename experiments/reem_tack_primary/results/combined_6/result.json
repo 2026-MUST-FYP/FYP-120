@@ -1,0 +1,94 @@
+{
+  "protocol_sha256": "eb302d9ba5eba75c9c1f8ec8b0def47c983cfaac30825cc67566133193c019c6",
+  "validation": {
+    "20261220": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 12,
+          "all_tp": 55,
+          "negative_fp": 14,
+          "seam_fp": 0
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 12,
+          "all_tp": 55,
+          "negative_fp": 14,
+          "seam_fp": 0
+        },
+        "map50": 0.18403,
+        "map50_95": 0.06732,
+        "checkpoint": "runs/reem_refinement/tongji_20261126_164918/original_reem/weights/last.pt",
+        "weights_sha256": "1f15c2514ae475dcf9858fa0f9f5cb9649247d47d7c33399d3650a18853746c5"
+      },
+      "detail_line_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 9,
+          "all_tp": 59,
+          "negative_fp": 22,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.29686433076858526,
+          "small_tp": 6,
+          "all_tp": 49,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "map50": 0.19837,
+        "map50_95": 0.08631,
+        "checkpoint": "runs/reem_refinement/tongji_20261126_164918/detail_line_reem/weights/last.pt",
+        "weights_sha256": "97889f2f3992dc5f3b3467aa344c941464b3f0aa57766f4d487222c22eb72bc1"
+      }
+    },
+    "20261221": {
+      "original_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 12,
+          "all_tp": 59,
+          "negative_fp": 20,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.25,
+          "small_tp": 12,
+          "all_tp": 59,
+          "negative_fp": 20,
+          "seam_fp": 1
+        },
+        "map50": 0.18428,
+        "map50_95": 0.07329,
+        "checkpoint": "runs/reem_refinement/tongji_20261126_165342/original_reem/weights/last.pt",
+        "weights_sha256": "c0db642ff6a7f6433e55014d07287fed661f710f6179916b761c47c826b1caff"
+      },
+      "detail_line_reem": {
+        "fixed": {
+          "conf": 0.25,
+          "small_tp": 9,
+          "all_tp": 51,
+          "negative_fp": 14,
+          "seam_fp": 1
+        },
+        "matched": {
+          "conf": 0.2120061814785004,
+          "small_tp": 10,
+          "all_tp": 56,
+          "negative_fp": 20,
+          "seam_fp": 2
+        },
+        "map50": 0.17361,
+        "map50_95": 0.064,
+        "checkpoint": "runs/reem_refinement/tongji_20261126_165342/detail_line_reem/weights/last.pt",
+        "weights_sha256": "54f4f171a1f12cca5563464551f85be1728ba431c0786d9e146c84df9662e171"
+      }
+    }
+  },
+  "validation_ap_deltas": {
+    "20261220": 0.018989999999999993,
+    "20261221": -0.009289999999999993
+  },
+  "eligible": false
+}

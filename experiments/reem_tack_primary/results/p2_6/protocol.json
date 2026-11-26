@@ -1,0 +1,16 @@
+{
+  "primary_dataset": "TACK",
+  "primary_metric": "box mAP50-95",
+  "training": "frozen mixed training with 98 audited Tongji positives",
+  "epochs": 6,
+  "seeds": [
+    20261220,
+    20261221
+  ],
+  "variants": [
+    "original_reem",
+    "detail_fusion_reem"
+  ],
+  "eligibility": "Both fresh seeds must improve validation mAP50-95 before evaluating TACK target_test.",
+  "selection": "P2-only detail fusion was chosen from earlier mixed-data experiments after the combined model missed the validation gate. TACK and the metric remain fixed; the 1898-image test split has not been used in this screening."
+}

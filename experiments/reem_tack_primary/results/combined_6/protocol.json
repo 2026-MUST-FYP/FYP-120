@@ -1,0 +1,16 @@
+{
+  "primary_dataset": "TACK",
+  "primary_metric": "box mAP50-95",
+  "training": "frozen mixed training with 98 audited Tongji positives",
+  "epochs": 6,
+  "seeds": [
+    20261220,
+    20261221
+  ],
+  "variants": [
+    "original_reem",
+    "detail_line_reem"
+  ],
+  "eligibility": "Both fresh seeds must improve validation mAP50-95 before evaluating TACK target_test.",
+  "selection": "TACK was chosen after the earlier exploratory trial. The 1898-image historical test split has not been used to select these refinements."
+}

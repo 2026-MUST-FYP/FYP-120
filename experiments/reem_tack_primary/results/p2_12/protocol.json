@@ -1,0 +1,16 @@
+{
+  "primary_dataset": "TACK",
+  "primary_metric": "box mAP50-95",
+  "training": "frozen mixed training with 98 audited Tongji positives",
+  "epochs": 12,
+  "seeds": [
+    20261224,
+    20261225
+  ],
+  "variants": [
+    "original_reem",
+    "detail_fusion_reem"
+  ],
+  "eligibility": "Both fresh seeds must improve validation mAP50-95 before evaluating TACK target_test.",
+  "selection": "Predeclared longer repeat of P2-only on two new seeds after the six-epoch validation signs disagreed. The TACK test split stays sealed until both fresh validation gains are positive."
+}
