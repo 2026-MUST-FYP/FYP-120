@@ -1,0 +1,16 @@
+{
+  "seeds": [
+    20261127,
+    20261128
+  ],
+  "epochs": 8,
+  "variants": [
+    "baseline",
+    "original_reem",
+    "directional_reem"
+  ],
+  "evaluation_split": "target_val",
+  "seam_sha256": "4cfc33445afd5b574503ec2c472d0e34aaf066b001bd940fb3ea0f4598be3d97",
+  "rule": "Recommend formal GPU comparison if directional REEM improves small-box hits against original REEM in both new seeds and its mean overall negative-image false-positive rate does not increase. Report the seam subset independently.",
+  "notes": "The previous single-seed 5-epoch run is recorded separately. Target test and external data are not used in this follow-up."
+}

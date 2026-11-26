@@ -1,0 +1,133 @@
+{
+  "protocol": {
+    "seeds": [
+      20261127,
+      20261128
+    ],
+    "epochs": 8,
+    "variants": [
+      "baseline",
+      "original_reem",
+      "directional_reem"
+    ],
+    "evaluation_split": "target_val",
+    "seam_sha256": "4cfc33445afd5b574503ec2c472d0e34aaf066b001bd940fb3ea0f4598be3d97",
+    "rule": "Recommend formal GPU comparison if directional REEM improves small-box hits against original REEM in both new seeds and its mean overall negative-image false-positive rate does not increase. Report the seam subset independently.",
+    "notes": "The previous single-seed 5-epoch run is recorded separately. Target test and external data are not used in this follow-up."
+  },
+  "experiments": [
+    {
+      "seed": 20261127,
+      "run": "20261126_121448",
+      "variants": {
+        "baseline": {
+          "epochs": 8,
+          "map50": 0.03523,
+          "map50_95": 0.01208,
+          "small_tp": 13,
+          "small_total": 234,
+          "all_tp": 21,
+          "all_total": 354,
+          "negative_fp": 24,
+          "negative_total": 299,
+          "seam_fp": 1,
+          "seam_total": 31,
+          "seam_frame_fp": 1,
+          "seam_frame_total": 21
+        },
+        "original_reem": {
+          "epochs": 8,
+          "map50": 0.0395,
+          "map50_95": 0.01263,
+          "small_tp": 11,
+          "small_total": 234,
+          "all_tp": 18,
+          "all_total": 354,
+          "negative_fp": 20,
+          "negative_total": 299,
+          "seam_fp": 2,
+          "seam_total": 31,
+          "seam_frame_fp": 2,
+          "seam_frame_total": 21
+        },
+        "directional_reem": {
+          "epochs": 8,
+          "map50": 0.04395,
+          "map50_95": 0.01587,
+          "small_tp": 9,
+          "small_total": 234,
+          "all_tp": 15,
+          "all_total": 354,
+          "negative_fp": 12,
+          "negative_total": 299,
+          "seam_fp": 1,
+          "seam_total": 31,
+          "seam_frame_fp": 1,
+          "seam_frame_total": 21
+        }
+      }
+    },
+    {
+      "seed": 20261128,
+      "run": "20261126_122248",
+      "variants": {
+        "baseline": {
+          "epochs": 8,
+          "map50": 0.05226,
+          "map50_95": 0.01942,
+          "small_tp": 8,
+          "small_total": 234,
+          "all_tp": 19,
+          "all_total": 354,
+          "negative_fp": 19,
+          "negative_total": 299,
+          "seam_fp": 2,
+          "seam_total": 31,
+          "seam_frame_fp": 2,
+          "seam_frame_total": 21
+        },
+        "original_reem": {
+          "epochs": 8,
+          "map50": 0.04558,
+          "map50_95": 0.01419,
+          "small_tp": 9,
+          "small_total": 234,
+          "all_tp": 18,
+          "all_total": 354,
+          "negative_fp": 14,
+          "negative_total": 299,
+          "seam_fp": 1,
+          "seam_total": 31,
+          "seam_frame_fp": 1,
+          "seam_frame_total": 21
+        },
+        "directional_reem": {
+          "epochs": 8,
+          "map50": 0.04223,
+          "map50_95": 0.01577,
+          "small_tp": 7,
+          "small_total": 234,
+          "all_tp": 14,
+          "all_total": 354,
+          "negative_fp": 11,
+          "negative_total": 299,
+          "seam_fp": 1,
+          "seam_total": 31,
+          "seam_frame_fp": 1,
+          "seam_frame_total": 21
+        }
+      }
+    }
+  ],
+  "small_box_hit_deltas": [
+    -2,
+    -2
+  ],
+  "mean_negative_fpr_delta": -0.018394648829431433,
+  "local_gate_passed": false,
+  "seam_candidate_tiles": 138,
+  "seam_tiles": 31,
+  "seam_frames": 21,
+  "validation_images": 426,
+  "pilot_status": "complete"
+}

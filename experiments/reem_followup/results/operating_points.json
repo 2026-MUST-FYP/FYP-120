@@ -1,0 +1,58 @@
+{
+  "split": "target_val",
+  "purpose": "Exploratory same-validation-set threshold diagnostic",
+  "min_prediction_conf": 0.05,
+  "fixed_conf": 0.25,
+  "experiments": [
+    {
+      "seed": 20261127,
+      "negative_budget": 20,
+      "original_reem": {
+        "conf": 0.25,
+        "small_tp": 11,
+        "all_tp": 18,
+        "negative_fp": 20,
+        "seam_fp": 2
+      },
+      "directional_reem": {
+        "conf": 0.25,
+        "small_tp": 9,
+        "all_tp": 15,
+        "negative_fp": 12,
+        "seam_fp": 1
+      },
+      "directional_matched_budget": {
+        "conf": 0.1891918778419495,
+        "small_tp": 11,
+        "all_tp": 21,
+        "negative_fp": 20,
+        "seam_fp": 1
+      }
+    },
+    {
+      "seed": 20261128,
+      "negative_budget": 14,
+      "original_reem": {
+        "conf": 0.25,
+        "small_tp": 9,
+        "all_tp": 18,
+        "negative_fp": 14,
+        "seam_fp": 1
+      },
+      "directional_reem": {
+        "conf": 0.25,
+        "small_tp": 7,
+        "all_tp": 14,
+        "negative_fp": 11,
+        "seam_fp": 1
+      },
+      "directional_matched_budget": {
+        "conf": 0.17610648274421695,
+        "small_tp": 9,
+        "all_tp": 19,
+        "negative_fp": 14,
+        "seam_fp": 3
+      }
+    }
+  ]
+}
